@@ -7,7 +7,7 @@
 class Transmission
 {
 public:
-    Transmission(uint8_t fl, uint8_t bl, uint8_t fr, uint8_t br, uint16_t max, RemoteDebug* debug);
+    Transmission(uint8_t fl, uint8_t bl, uint8_t fr, uint8_t br, uint16_t max); //, RemoteDebug* debug);
 
     void Init();
 

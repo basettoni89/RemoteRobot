@@ -1,6 +1,6 @@
 #include "Transmission.h"
 
-Transmission::Transmission(uint8_t fl, uint8_t bl, uint8_t fr, uint8_t br, uint16_t max, RemoteDebug* debug) {
+Transmission::Transmission(uint8_t fl, uint8_t bl, uint8_t fr, uint8_t br, uint16_t max /*, RemoteDebug* debug */) {
     _fl = fl;
     _bl = bl;
     _fr = fr;
@@ -8,7 +8,7 @@ Transmission::Transmission(uint8_t fl, uint8_t bl, uint8_t fr, uint8_t br, uint1
 
     _max = max;
 
-    _debug = debug;
+    // _debug = debug;
 }
 
 void Transmission::Init() {
@@ -27,8 +27,8 @@ void Transmission::Move(int8_t dir, int8_t turn) {
     right = right > 100 ? 100 : right;
     right = right < -100 ? -100 : right;
 
-    if(_debug->isActive(_debug->DEBUG))
-        _debug->printf("%d %d\n", left, right);
+    // if(_debug->isActive(_debug->DEBUG))
+    //     _debug->printf("%d %d\n", left, right);
 
     if(left > 0) {
         analogWrite(_fl, (_max / 100.0f) * left);
